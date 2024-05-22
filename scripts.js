@@ -26,9 +26,15 @@ let useFrontCamera = true;
 let speechSynthesisUtterance;
 let recognition;
 
+// Detect if the device is Android
+const isAndroid = /android/i.test(navigator.userAgent);
+
+// Set initial camera facing mode based on device type
+const initialFacingMode = isAndroid ? 'environment' : 'user';
+
 const constraints = {
     video: {
-        facingMode: useFrontCamera ? 'user' : 'environment'
+        facingMode: initialFacingMode
     }
 };
 
