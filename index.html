@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Captioning</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 flex flex-col items-center justify-center min-h-screen">
+    <div class="w-full max-w-md">
+        <div class="flex mb-4">
+            <button id="camera-tab" class="w-1/2 bg-blue-500 text-white py-2 px-4 rounded-t-lg">Camera</button>
+            <button id="upload-tab" class="w-1/2 bg-gray-300 py-2 px-4 rounded-t-lg">Upload</button>
+        </div>
+        <div id="camera-container" class="flex flex-col items-center justify-center p-4 bg-white rounded-b-lg shadow-lg">
+            <video id="camera" autoplay class="w-full rounded-lg shadow-lg mb-4"></video>
+            <div class="flex space-x-4">
+                <button id="capture-button" class="bg-blue-500 text-white px-4 py-2 rounded shadow">Capture</button>
+                <button id="switch-camera" class="bg-gray-500 text-white px-4 py-2 rounded shadow">Switch Camera</button>
+            </div>
+        </div>
+        <div id="upload-container" class="hidden flex flex-col items-center justify-center p-4 bg-white rounded-b-lg shadow-lg">
+            <input type="file" id="file-input" class="mb-4">
+            <button id="upload-button" class="bg-blue-500 text-white px-4 py-2 rounded shadow">Upload</button>
+        </div>
+        <div id="result-container" class="hidden flex flex-col items-center justify-center p-4 bg-white rounded-lg shadow-lg mt-4">
+            <img id="captured-image" alt="Captured Image" class="w-full rounded-lg shadow-lg mb-4">
+            <p id="caption" class="text-lg font-semibold text-center mb-4"></p>
+            <div id="camera-result-buttons" class="flex space-x-4 hidden">
+                <button id="retake-button" class="bg-yellow-500 text-white px-4 py-2 rounded shadow">Retake Photo</button>
+                <button id="replay-caption-button" class="bg-green-500 text-white px-4 py-2 rounded shadow">Replay Caption</button>
+                <button id="stop-caption-button" class="bg-gray-500 text-white px-4 py-2 rounded shadow">Stop Voice</button>
+                <button id="close-button" class="bg-red-500 text-white px-4 py-2 rounded shadow">Close</button>
+            </div>
+            <div id="upload-result-buttons" class="flex space-x-4 hidden">
+                <button id="reupload-button" class="bg-yellow-500 text-white px-4 py-2 rounded shadow">Reupload</button>
+                <button id="replay-upload-caption-button" class="bg-green-500 text-white px-4 py-2 rounded shadow">Replay Caption</button>
+                <button id="stop-upload-caption-button" class="bg-gray-500 text-white px-4 py-2 rounded shadow">Stop Voice</button>
+                <button id="close-upload-button" class="bg-red-500 text-white px-4 py-2 rounded shadow">Close</button>
+            </div>
+        </div>
+    </div>
+    <script src="scripts.js"></script>
+</body>
+</html>
