@@ -208,7 +208,7 @@ async function uploadImageAndGetCaption(imageData, source) {
         const uploadData = await uploadResponse.json();
         const imageUrl = uploadData.data.link;
 
-        const apiResponse = await fetch(`https://api.nyx.my.id/ai/bardimg?text=deskripsikan%20gambar%20ini&url=${encodeURIComponent(imageUrl)}`);
+        const apiResponse = await fetch(`https://api.nyx.my.id/ai/gemini-img?text=deskripsikan%20gambar%20ini&url=${encodeURIComponent(imageUrl)}`);
         const apiData = await apiResponse.json();
         
         const captionText = apiData.result;
